@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 
 export async function generateStaticParams(){
   const data = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`)
@@ -16,7 +17,11 @@ export default async function MovieDetail({ params }){
   
   const res = await data.json()
 
-  return(    
+  return( 
+    <div className="m-auto w-5/6"> 
+      <Link href={`/`}>
+        <h1 className="font-bold">Back to home</h1>
+      </Link>
     <div className="w-2/4 m-auto mt-12 shadow-md p-2 bg-slate-100 rounded">
       <h2 className="text-6xl">{res.title}</h2>
       <h2 className="text-4xl">{res.release_date}</h2>
@@ -30,11 +35,10 @@ export default async function MovieDetail({ params }){
           priority
           >
           </Image>
-
           <div>
           <p>{res.overview}</p>
           </div>
     </div>
-    
+    </div>  
   )
 }

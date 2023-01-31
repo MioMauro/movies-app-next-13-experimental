@@ -24,8 +24,11 @@ export default async function Home(){
           </li>
         </ul>
       </nav>
-      
+      <Link href={`/`}>
+        <h1 className="font-bold mb-4 ml-2">Back to home</h1>
+      </Link>
     <div className="grid gap-16 grid-cols-fluid shadow-md p-2">
+      
       {res.results.map((movie) => (        
         <Movie 
           key={movie.id}
