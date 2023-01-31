@@ -8,12 +8,12 @@ return (
     <div>
         <h1>{title}</h1>
         <h2>{release_date}</h2>
-        <Link href={`/asd`}>
-        <Image 
+        <Link href={`/${id}`}>
+        <Image className="rounded-lg"
         src={imagePath + poster_path} 
         alt={title}
-        width={800}
-        height={400}
+        width={300}
+        height={300}
         />
         </Link>
     </div>

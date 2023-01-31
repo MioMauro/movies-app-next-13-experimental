@@ -10,6 +10,9 @@ module.exports = {
       fontFamily: {
         redHat: ["var(--font-redHat"],
       },
+      gridTemplateColumns: {
+        fluid: "repeat(auto-fit,minmax(15rem,1fr))",
+      },
     },
   },
   plugins: [],
