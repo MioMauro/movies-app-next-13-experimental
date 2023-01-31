@@ -1,38 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+https://www.youtube.com/watch?v=T63nY70eZF0
 
-## Getting Started
+npx create-next-app@latest --experimental-app
 
-First, run the development server:
+npm install -D tailwindcss postcss autoprefixer
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+npx tailwindcss init -p
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+content: [
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+    "./app/**/*.{js,ts,jsx,tsx}",
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+    "./pages/**/*.{js,ts,jsx,tsx}",
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+    "./components/**/*.{js,ts,jsx,tsx}",
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+---
 
-## Learn More
+npm i @next/font
+Adding variable to better manage fonts on the project
 
-To learn more about Next.js, take a look at the following resources:
+const redHat = Red_Hat_Text({
+  subsets: ['latin'],
+  weight: ['700', '600'],
+  variable: '--font-redHat',
+})
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+extend: {
+      fontFamily: {
+        redHat: ["var(--font-redHat"],
+      },
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+API from:
+https://www.themoviedb.org/
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+update next.config.js for images domains
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+const nextConfig = {
+  experimental: {
+    appDir: true,
+  },
+  images: {
+    domains: ["image.tmdb.org"],
+  },
+}
+
+module.exports = nextConfig
+
+---
