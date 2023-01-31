@@ -16,18 +16,18 @@ export default async function Home(){
   return(<div>
     <nav className='flex gap-9 mb-6 bg-gray-100 p-4 rounded'>
       <Link href={`/`}>
-        <h1 className={`${redHat.className}`}><span>POPULAR FILM</span></h1>
+        <h1 className={redHat.className}><span>POPULAR FILM</span></h1>
       </Link>
         <ul>
-          <li className={`${redHat.className}`}>
+          <li className={redHat.className}>
             <a href='/about'>About</a>
           </li>
         </ul>
       </nav>
       <Link href={`/`}>
-        <h1 className="font-bold mb-4 ml-2">Back to home</h1>
+        <h1 className="font-bold mb-4 ml-2">Back to Home</h1>
       </Link>
-    <div className="grid gap-16 grid-cols-fluid shadow-md p-2">
+      <div className="grid gap-16 grid-cols-fluid shadow-md p-2">
       
       {res.results.map((movie) => (        
         <Movie 
