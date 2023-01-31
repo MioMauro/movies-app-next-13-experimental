@@ -18,6 +18,7 @@ content: [
 
 npm i @next/font
 Adding variable to better manage fonts on the project
+(result: bad solution at the moment)
 
 const redHat = Red_Hat_Text({
   subsets: ['latin'],
