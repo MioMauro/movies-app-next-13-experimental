@@ -16,18 +16,17 @@ export default async function MovieDetail({ params }){
   
   const res = await data.json()
 
-  return(
-    <div>
-    <div>
-      <h2 className="text-4xl">{res.title}</h2>
+  return(    
+    <div className="w-2/4 m-auto mt-12 shadow-md p-2 bg-slate-100 rounded">
+      <h2 className="text-6xl">{res.title}</h2>
       <h2 className="text-4xl">{res.release_date}</h2>
       <h2 className="text-sm">Runtime: {res.runtime} minutes</h2>
-      <h2 className="bg-green-500 inline-block my-2 py-2 px-4 rounded">{res.status}</h2>
-          <Image className="my-12 w-full"
+      <h2 className="bg-green-300 inline-block my-2 py-1 px-4 rounded">{res.status}</h2>
+          <Image className="my-12 w-full rounded-lg shadow-xl"
           src={imagePath + res.backdrop_path}
           alt="images"
-          width={800}
-          height={800}
+          width={500}
+          height={500}
           priority
           >
           </Image>
@@ -36,6 +35,6 @@ export default async function MovieDetail({ params }){
           <p>{res.overview}</p>
           </div>
     </div>
-    </div>
+    
   )
 }

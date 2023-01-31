@@ -12,12 +12,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head />
-      <body className='bg-red-500 mx-32 my-12'>
-
-
-      <nav className='flex border gap-9'>
+      <body className=' mx-32 my-12'>
+      <nav className='flex gap-9 mb-6 bg-gray-100 p-4 rounded'>
       <Link href={`/`}>
-        <h1 className={`${redHat.className}`}><span>LOGO</span></h1>
+        <h1 className={`${redHat.className}`}><span>POPULAR FILM</span></h1>
       </Link>
         <ul>
           <li className={`${redHat.className}`}>
@@ -25,10 +23,6 @@ export default function RootLayout({ children }) {
           </li>
         </ul>
       </nav>
-
-      
-
-
       {children}
       </body>
     </html>

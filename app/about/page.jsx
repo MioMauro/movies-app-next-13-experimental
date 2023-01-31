@@ -1,4 +1,4 @@
-
+import Link from "next/link"
 
 export default function AboutPage(){
 
@@ -6,7 +6,10 @@ export default function AboutPage(){
 
     return(
         <div>
-            about page
+        <p>ABOUT PAGE</p>
+            <Link href={`/`}>
+                <h1>Back to home</h1>
+            </Link>
         </div>
     )
 }
